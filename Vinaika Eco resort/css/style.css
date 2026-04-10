@@ -31,7 +31,11 @@
 
 /* Template default CSS
 /*----------------------------------------*/
-
+/*----------------------------------------*/
+@font-face {
+	font-family: tan-pearl;
+	src: url(../fonts/tan-pearl.otf);
+  }
 :root{
   --primary-color: #073220;
   --btn-color: #073220;
@@ -42,6 +46,7 @@
   --secondary-color: #597338;
 ;
 }
+
 html, body {
 	height: 100%;
 	font-family: "Cabin", sans-serif;
@@ -52,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	color: #111111;
 	font-weight: 400;
-	font-family: "Lora", serif;
+	font-family: tan-pearl;
 }
 h1 {
 	font-size: 70px;
@@ -74,7 +79,7 @@ h6 {
 }
 p {
 	font-size: 16px;
-	font-family: "Cabin", sans-serif;
+	font-family: tan-pearl;
 	color: #6b6b6b;
 	font-weight: 400;
 	line-height: 26px;
@@ -1165,6 +1170,7 @@ ul, ol {
 .video-section {
 	height: 500px;
 	padding-top: 140px;
+	background-attachment: fixed;
 }
 .video-section .video-text {
 	text-align: center;
@@ -1182,6 +1188,7 @@ ul, ol {
 .video-section .video-text .play-btn {
 	display: inline-block;
 }
+/*---------------------
 /*---------------------
   Gallery Section
 -----------------------*/
