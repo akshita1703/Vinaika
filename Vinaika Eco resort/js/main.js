@@ -107,3 +107,16 @@
     $("select").niceSelect();
 
 })(jQuery);
+$('.testimonial-slider').owlCarousel({
+    loop: true,
+    margin: 20,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 6000,
+    smartSpeed: 1200, /* Slower, luxury transition */
+    responsive: {
+        0: { items: 1 },
+        768: { items: 2 },
+        992: { items: 3 }
+    }
+});
