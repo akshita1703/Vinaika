@@ -120,3 +120,6 @@ $('.testimonial-slider').owlCarousel({
         992: { items: 3 }
     }
 });
+
+
+/*gallery*/
