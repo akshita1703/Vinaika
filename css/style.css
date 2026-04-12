@@ -3608,313 +3608,332 @@ img[src=""] {
         }
 
 		/*Brochure3*/
-		.brochure3-section {
-            background: linear-gradient(135deg, #fef9f0 0%, #f5efe3 100%);
-            padding: 90px 24px;
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            position: relative;
-            overflow: hidden;
-        }
+		/* ============================================ */
+/* BROCHURE3 SECTION - RESPONSIVE CSS           */
+/* For your existing HTML structure             */
+/* ============================================ */
 
-        /* Decorative leaf elements (background flair) */
-        .brochure3-section::before {
-            content: "🌿";
-            font-size: 280px;
-            position: absolute;
-            bottom: -80px;
-            left: -60px;
-            opacity: 0.04;
-            pointer-events: none;
-            transform: rotate(15deg);
-        }
+.brochure3-section {
+    background: linear-gradient(135deg, #fef9f0 0%, #f5efe3 100%);
+    padding: 80px 24px;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
 
-        .brochure3-section::after {
-            content: "🍃";
-            font-size: 200px;
-            position: absolute;
-            top: -50px;
-            right: -40px;
-            opacity: 0.04;
-            pointer-events: none;
-            transform: rotate(-10deg);
-        }
+/* Decorative leaf background */
+.brochure3-section::before {
+    content: "🌿";
+    font-size: 280px;
+    position: absolute;
+    bottom: -80px;
+    left: -60px;
+    opacity: 0.04;
+    pointer-events: none;
+    transform: rotate(15deg);
+}
 
-        .brochure3-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
+.brochure3-section::after {
+    content: "🍃";
+    font-size: 200px;
+    position: absolute;
+    top: -50px;
+    right: -40px;
+    opacity: 0.04;
+    pointer-events: none;
+    transform: rotate(-10deg);
+}
 
-        /* Header Area */
-        .brochure3-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+.brochure3-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
 
-        .brochure3-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #2d5a2c;
-            color: #fef5e6;
-            padding: 6px 18px;
-            border-radius: 60px;
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(2px);
-        }
+/* Header Area */
+.brochure3-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
 
-        .brochure3-badge span {
-            font-size: 14px;
-        }
+.brochure3-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #2d5a2c;
+    color: #fef5e6;
+    padding: 6px 18px;
+    border-radius: 60px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
 
-        .brochure3-title {
-            font-size: 52px;
-            font-weight: 700;
-            color: #1e3a1e;
-            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
+.brochure3-badge span {
+    font-size: 14px;
+}
 
-        .brochure3-subtitle {
-            font-size: 18px;
-            color: #5a6e4a;
-            max-width: 650px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
+.brochure3-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #1e3a1e;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
 
-        /* Featured Card (Hero style - Image + text side by side) */
-        .brochure3-featured {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 45px;
-            align-items: center;
-            background: #ffffffcc;
-            backdrop-filter: blur(2px);
-            border-radius: 48px;
-            padding: 30px;
-            margin-bottom: 60px;
-            box-shadow: 0 25px 45px -18px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 245, 225, 0.7);
-        }
+/* Featured Section - Image + Text side by side */
+.brochure3-featured {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+    border-radius: 48px;
+    padding: 35px;
+    box-shadow: 0 25px 45px -18px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 245, 225, 0.7);
+}
 
-        .brochure3-featured-img {
-            flex: 1.2;
-            min-width: 260px;
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
-        }
+.brochure3-featured-img {
+    flex: 1.2;
+    min-width: 280px;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+}
 
-        .brochure3-featured-img img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
+.brochure3-featured-img img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
 
-        .brochure3-featured-img:hover img {
-            transform: scale(1.03);
-        }
+.brochure3-featured-img:hover img {
+    transform: scale(1.03);
+}
 
-        .brochure3-featured-content {
-            flex: 1;
-            min-width: 360px;
-        }
+.brochure3-featured-content {
+    flex: 1;
+    min-width: 280px;
+}
 
-      
+.brochure3-featured-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #2c4b2c;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    margin-bottom: 24px;
+    line-height: 1.25;
+}
 
-        .brochure3-featured-title {
-            font-size: 34px;
-            font-weight: 700;
-            color: var(--primary-color);
-            font-family: var(--primary-font);
-            margin-bottom: 20px;
-            line-height: 1.25;
-        }
+.brochure3-featured-text {
+    font-size: 16px;
+    color: #4a5a3e;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
 
-        .brochure3-featured-text {
-            font-size: 16px;
-            color: #4a5a3e;
-            line-height: 1.65;
-            margin-bottom: 24px;
-        }
+.brochure3-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #b87c4f;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: gap 0.2s;
+}
 
-        /* Cards Grid (3 cards - for villas / eco stays) */
-        .brochure3-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            margin: 50px 0 40px;
-        }
+.brochure3-link:hover {
+    gap: 14px;
+    color: #8b5a2e;
+}
 
-        .brochure3-card {
-            background: white;
-            border-radius: 32px;
-            overflow: hidden;
-            transition: all 0.35s ease;
-            box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.1);
-            border: 1px solid #f0e5d6;
-        }
+/* ============================================ */
+/* RESPONSIVE BREAKPOINTS                       */
+/* ============================================ */
 
-        .brochure3-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 28px 38px -16px rgba(0, 0, 0, 0.2);
-        }
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .brochure3-section {
+        padding: 60px 20px;
+    }
+    
+    .brochure3-title {
+        font-size: 44px;
+    }
+    
+    .brochure3-featured {
+        gap: 35px;
+        padding: 28px;
+    }
+    
+    .brochure3-featured-title {
+        font-size: 34px;
+    }
+    
+    .brochure3-featured-img img {
+        height: 340px;
+    }
+}
 
-        .brochure3-card-img {
-            height: 240px;
-            overflow: hidden;
-        }
+/* Tablet Small / Landscape (600px - 768px) */
+@media (max-width: 768px) {
+    .brochure3-section {
+        padding: 50px 16px;
+    }
+    
+    .brochure3-header {
+        margin-bottom: 40px;
+    }
+    
+    .brochure3-title {
+        font-size: 36px;
+    }
+    
+    .brochure3-badge {
+        font-size: 11px;
+        padding: 4px 14px;
+    }
+    
+    .brochure3-featured {
+        flex-direction: column;
+        gap: 30px;
+        padding: 24px;
+        border-radius: 36px;
+    }
+    
+    .brochure3-featured-img {
+        width: 100%;
+    }
+    
+    .brochure3-featured-img img {
+        height: 300px;
+    }
+    
+    .brochure3-featured-content {
+        text-align: center;
+    }
+    
+    .brochure3-featured-title {
+        font-size: 30px;
+        margin-bottom: 18px;
+    }
+    
+    .brochure3-featured-text {
+        font-size: 15px;
+        line-height: 1.65;
+        text-align: left;
+    }
+}
 
-        .brochure3-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-        }
+/* Mobile (480px - 600px) */
+@media (max-width: 600px) {
+    .brochure3-section {
+        padding: 40px 16px;
+    }
+    
+    .brochure3-section::before {
+        font-size: 180px;
+        bottom: -50px;
+        left: -40px;
+    }
+    
+    .brochure3-section::after {
+        font-size: 140px;
+        top: -30px;
+        right: -30px;
+    }
+    
+    .brochure3-title {
+        font-size: 30px;
+    }
+    
+    .brochure3-badge {
+        font-size: 10px;
+        padding: 4px 12px;
+        margin-bottom: 14px;
+    }
+    
+    .brochure3-featured {
+        padding: 20px;
+        border-radius: 28px;
+        gap: 20px;
+    }
+    
+    .brochure3-featured-img img {
+        height: 240px;
+        border-radius: 24px;
+    }
+    
+    .brochure3-featured-title {
+        font-size: 26px;
+    }
+    
+    .brochure3-featured-text {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
 
-        .brochure3-card:hover .brochure3-card-img img {
-            transform: scale(1.05);
-        }
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+    .brochure3-section {
+        padding: 30px 14px;
+    }
+    
+    .brochure3-title {
+        font-size: 26px;
+    }
+    
+    .brochure3-featured {
+        padding: 16px;
+        border-radius: 24px;
+    }
+    
+    .brochure3-featured-img img {
+        height: 200px;
+    }
+    
+    .brochure3-featured-title {
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+    
+    .brochure3-featured-text {
+        font-size: 13px;
+        line-height: 1.55;
+    }
+}
 
-        .brochure3-card-content {
-            padding: 24px;
-        }
+/* Fix for very large screens (1440px+) */
+@media (min-width: 1440px) {
+    .brochure3-container {
+        max-width: 1400px;
+    }
+    
+    .brochure3-featured-img img {
+        height: 450px;
+    }
+    
+    .brochure3-featured-title {
+        font-size: 44px;
+    }
+    
+    .brochure3-featured-text {
+        font-size: 18px;
+    }
+}
 
-        .brochure3-card-tag {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #b87c4f;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .brochure3-card-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #2a4b2a;
-            margin-bottom: 12px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .brochure3-card-text {
-            font-size: 14px;
-            color: #5c6e50;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .brochure3-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #b87c4f;
-            font-weight: 600;
-            font-size: 14px;
-            text-decoration: none;
-            transition: gap 0.2s;
-        }
-
-        .brochure3-link:hover {
-            gap: 14px;
-            color: #8b5a2e;
-        }
-
-        /* Tools / Quick Access Section (like timer, notes etc) */
-        .brochure3-tools {
-            background: #2d3e28;
-            border-radius: 40px;
-            padding: 32px 28px;
-            margin-top: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .brochure3-tools-text {
-            color: #fef0df;
-        }
-
-        .brochure3-tools-text h4 {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .brochure3-tools-text p {
-            font-size: 14px;
-            opacity: 0.85;
-        }
-
-        .brochure3-tools-icons {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .brochure3-tool-item {
-            background: rgba(255, 245, 225, 0.12);
-            padding: 8px 20px;
-            border-radius: 60px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #f5e2c1;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .brochure3-tool-item:hover {
-            background: #b87c4f;
-            color: #1e2e1a;
-            transform: translateY(-2px);
-        }
-
-        /* Responsive */
-        @media (max-width: 850px) {
-            .brochure3-section {
-                padding: 60px 20px;
-            }
-            .brochure3-title {
-                font-size: 38px;
-            }
-            .brochure3-featured {
-                flex-direction: column;
-                padding: 24px;
-            }
-            .brochure3-featured-title {
-                font-size: 28px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .brochure3-title {
-                font-size: 32px;
-            }
-            .brochure3-subtitle {
-                font-size: 16px;
-            }
-            .brochure3-featured-img img {
-                height: 240px;
-            }
-            .brochure3-tools {
-                flex-direction: column;
-                text-align: center;
-            }
-            .brochure3-tools-icons {
-                justify-content: center;
-            }
-        }
+/* Optional: Smooth transitions for all interactive elements */
+.brochure3-featured-img img,
+.brochure3-link {
+    transition: all 0.3s ease;
+}
