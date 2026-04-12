@@ -342,263 +342,269 @@ ol {
 /*---------------------
   Header
 -----------------------*/
-
-.header-section.header-normal .menu-item {
-	-webkit-box-shadow: 0px 12px 15px rgba(36, 11, 12, 0.05);
-	box-shadow: 0px 12px 15px rgba(36, 11, 12, 0.05);
+/* Header Section */
+.header-section {
+  position: relative;
+  z-index: 99;
+  background: transparent;
 }
 
+/* Top Navigation */
 .top-nav {
-	border-bottom: 1px solid #e5e5e5;
+  background: var(--primary-color);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.top-nav .tn-left li {
-	list-style: none;
-	display: inline-block;
-	font-size: 16px;
-	color: #19191a;
-	font-weight: 500;
-	padding: 14px 0 12px;
-	margin-right: 64px;
-	position: relative;
+.tn-left {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.top-nav .tn-left li:after {
-	position: absolute;
-	right: -32px;
-	top: 0;
-	width: 1px;
-	height: 100%;
-	background: #e5e5e5;
-	content: "";
+.tn-left li {
+  display: inline-block;
+  font-size: 14px;
+  color: #ffffff;
+  margin-right: 25px;
 }
 
-.top-nav .tn-left li:last-child {
-	margin-right: 0;
+.tn-left li i {
+  color: var(--white);
+  margin-right: 8px;
 }
 
-.top-nav .tn-left li:last-child:after {
-	display: none;
+.tn-right {
+  text-align: right;
 }
 
-.top-nav .tn-left li i {
-	color: var(--primary-color);
-	margin-right: 4px;
+.top-social {
+  display: inline-block;
+  margin-right: 20px;
 }
 
-.top-nav .tn-right {
-	text-align: right;
+.top-social a {
+  font-size: 14px;
+  color: #ffffff;
+  margin-left: 15px;
+  transition: all 0.3s;
 }
 
-.top-nav .tn-right .top-social {
-	display: inline-block;
-	margin-right: 35px;
-	padding: 13px 0;
+.top-social a:hover {
+  color: var(--secondary-color);
 }
 
-.top-nav .tn-right .top-social a {
-	display: inline-block;
-	font-size: 16px;
-	color: #19191a;
-	margin-left: 15px;
+.bk-btn {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  border: 1px solid var(--secondary-color);
+  padding: 8px 25px;
+  border-radius: 2px;
+  transition: all 0.3s;
 }
 
-.top-nav .tn-right .bk-btn {
-	display: inline-block;
-	font-size: 13px;
-	font-weight: 700;
-	padding: 16px 28px 15px;
-	background-color: var(--btn-color);
-	color: #ffffff;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+.bk-btn:hover {
+  background: var(--white);
+  color: var(--primary-color);
 }
 
-.top-nav .tn-right .language-option {
-	display: inline-block;
-	margin-left: 30px;
-	cursor: pointer;
-	padding: 13px 0px 11px;
-	position: relative;
-}
-
-.top-nav .tn-right .language-option:hover .flag-dropdown {
-	top: 40px;
-	opacity: 1;
-	visibility: visible;
-}
-
-.top-nav .tn-right .language-option img {
-	height: 26px;
-	width: 26px;
-	border-radius: 50%;
-	margin-right: 10px;
-}
-
-.top-nav .tn-right .language-option span {
-	font-size: 16px;
-	color: #19191a;
-	text-transform: uppercase;
-	font-weight: 500;
-}
-
-.top-nav .tn-right .language-option .flag-dropdown {
-	position: absolute;
-	left: 0;
-	top: 60px;
-	width: 100px;
-	background: #ffffff;
-	display: block;
-	padding: 10px 15px;
-	-webkit-box-shadow: 0px 9px 10px rgba(25, 25, 26, 0.2);
-	box-shadow: 0px 9px 10px rgba(25, 25, 26, 0.2);
-	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
-	z-index: 99;
-}
-
-.top-nav .tn-right .language-option .flag-dropdown ul li {
-	list-style: none;
-	text-align: left;
-}
-
-.top-nav .tn-right .language-option .flag-dropdown ul li a {
-	font-size: 14px;
-	text-transform: uppercase;
-	font-weight: 500;
-	color: #19191a;
-	-webkit-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.top-nav .tn-right .language-option .flag-dropdown ul li a:hover {
-	color: #dfa974;
-}
-
+/* Main Menu Item */
 .menu-item {
-	position: relative;
-	z-index: 9;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 10;
 }
 
-.menu-item .logo {
-	padding: 25px 0;
-	width: 80px;
+/* Logo Styling - FIXED */
+.logo {
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
-.menu-item .logo a {
-	display: inline-block;
+.logo a {
+  display: inline-block;
 }
 
-.menu-item .nav-menu {
-	text-align: right;
+.logo img {
+  max-height: 80px; /* Controls logo size */
+  width: auto;
+  max-width: 200px;
+  object-fit: cover;
 }
 
-.menu-item .nav-menu .mainmenu {
-	display: inline-block;
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  min-height: 74px; /* Matches logo area height */
 }
 
-.menu-item .nav-menu .mainmenu li {
-	list-style: none;
-	display: inline-block;
-	position: relative;
-	z-index: 1;
+.mainmenu {
+  display: inline-block;
 }
 
-.menu-item .nav-menu .mainmenu li.active a:after {
-	opacity: 1;
+.mainmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
-.menu-item .nav-menu .mainmenu li:hover>a:after {
-	opacity: 1;
+.mainmenu ul li {
+  display: inline-block;
+  margin-left: 35px;
+  position: relative;
 }
 
-.menu-item .nav-menu .mainmenu li:hover .dropdown {
-	top: 77px;
-	opacity: 1;
-	visibility: visible;
+.mainmenu ul li.active a {
+  color: var(--primary-color);
+  
 }
 
-.menu-item .nav-menu .mainmenu li a {
-	font-size: 16px;
-	color: #19191a;
-	margin-right: 42px;
-	font-weight: 500;
-	display: inline-block;
-	padding: 27px 0;
-	position: relative;
-	-webkit-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
+.mainmenu ul li a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #19191a;
+  text-transform: uppercase;
+  font-family: var(--secondary-font);
+  transition: all 0.3s;
+  padding: 25px 0;
+  display: inline-block;
 }
 
-.menu-item .nav-menu .mainmenu li a:after {
-	position: absolute;
-	left: 0;
-	top: 52px;
-	width: 100%;
-	height: 2px;
-	background: #dfa974;
-	content: "";
-	opacity: 0;
-	-webkit-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
+.mainmenu ul li a:hover {
+  color: var(--brand-green);
 }
 
-.menu-item .nav-menu .mainmenu li .dropdown {
-	position: absolute;
-	left: 0;
-	top: 97px;
-	width: 180px;
-	background: #ffffff;
-	z-index: 9;
-	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
-	-webkit-box-shadow: 0px 9px 15px rgba(25, 25, 26, 0.05);
-	box-shadow: 0px 9px 15px rgba(25, 25, 26, 0.05);
+/* Dropdown Menu (if needed) */
+.mainmenu ul li .dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 200px;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 99;
 }
 
-.menu-item .nav-menu .mainmenu li .dropdown li {
-	list-style: none;
-	display: block;
+.mainmenu ul li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
 }
 
-.menu-item .nav-menu .mainmenu li .dropdown li a {
-	font-size: 16px;
-	color: #19191a;
-	display: block;
-	text-align: left;
-	padding: 8px 15px;
-	-webkit-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
+.mainmenu ul li .dropdown li {
+  display: block;
+  margin-left: 0;
 }
 
-.menu-item .nav-menu .mainmenu li .dropdown li a:hover {
-	color: #dfa974;
+.mainmenu ul li .dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
 }
 
-.menu-item .nav-menu .mainmenu li .dropdown li a:after {
-	display: none;
+/* Nav Right (Search Icon) */
+.nav-right {
+  margin-left: 30px;
+  cursor: pointer;
 }
 
-.menu-item .nav-menu .nav-right {
-	display: inline-block;
-	margin-left: 43px;
-	padding: 27px 0px;
+.nav-right i {
+  font-size: 18px;
+  color: #19191a;
+  transition: all 0.3s;
 }
 
-.menu-item .nav-menu .nav-right i {
-	font-size: 16px;
-	color: #19191a;
-	cursor: pointer;
+.nav-right i:hover {
+  color: #dfa974;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .mainmenu ul li {
+    margin-left: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  .top-nav {
+    display: none;
+  }
+  
+  .logo img {
+    max-height: 45px;
+  }
+  
+  .mainmenu ul li {
+    margin-left: 20px;
+  }
+  
+  .mainmenu ul li a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-item .container > .row {
+    flex-direction: column;
+  }
+  
+  .logo {
+    text-align: center;
+    justify-content: center;
+    padding: 15px 0;
+  }
+  
+  .nav-menu {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+  }
+  
+  .mainmenu ul li {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+  .mainmenu ul li a {
+    padding: 15px 0;
+  }
+  
+  .nav-right {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainmenu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .mainmenu ul li {
+    margin: 0 10px;
+  }
+  
+  .mainmenu ul li a {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+  
+  .logo img {
+    max-height: 80px;
+  }
 }
 
 .canvas-open {
@@ -612,179 +618,224 @@ ol {
 /*---------------------
   Hero
 -----------------------*/
-
 .hero-section {
-	position: relative;
-	padding-top: 60px;
-	padding-bottom: 100px;
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  /* Ensure section has a defined height when text is removed */
+  min-height: 100vh; /* Added: gives section full viewport height */
+  display: flex; /* Added: helps vertical alignment */
+  align-items: center; /* Added: centers content vertically */
 }
 
 .hero-section .container {
-	position: relative;
-	z-index: 5;
+  position: relative;
+  z-index: 5;
 }
 
 .hero-text {
-	padding-top: 145px;
+  padding-top: 145px;
 }
 
 .hero-text h1 {
-	font-size: 80px;
-	line-height: 90px;
-	color: #ffffff;
-	margin-bottom: 16px;
+  font-size: 80px;
+  line-height: 90px;
+  color: #ffffff;
+  margin-bottom: 16px;
 }
 
 .hero-text p {
-	font-size: 18px;
-	color: #ffffff;
-	line-height: 28px;
-	margin-bottom: 35px;
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 28px;
+  margin-bottom: 35px;
 }
 
 .booking-form {
-	background: #ffffff;
-	padding: 44px 40px 50px 40px;
-	border-radius: 4px;
+  background: #ffffff;
+  padding: 44px 40px 50px 40px;
+  border-radius: 4px;
 }
 
 .booking-form h3 {
-	color: #19191a;
-	margin-bottom: 36px;
+  color: #19191a;
+  margin-bottom: 36px;
 }
 
 .booking-form form .check-date {
-	position: relative;
-	margin-bottom: 15px;
+  position: relative;
+  margin-bottom: 15px;
 }
 
 .booking-form form .check-date label {
-	font-size: 14px;
-	color: #707079;
-	display: block;
-	margin-bottom: 10px;
+  font-size: 14px;
+  color: #707079;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .booking-form form .check-date input {
-	width: 100%;
-	height: 50px;
-	border: 1px solid #ebebeb;
-	border-radius: 2px;
-	font-size: 16px;
-	color: #19191a;
-	text-transform: uppercase;
-	font-weight: 500;
-	padding-left: 20px;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+  font-size: 16px;
+  color: #19191a;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-left: 20px;
 }
 
 .booking-form form .check-date i {
-	color: #dfa974;
-	position: absolute;
-	right: 18px;
-	bottom: 17px;
+  color: #dfa974;
+  position: absolute;
+  right: 18px;
+  bottom: 17px;
 }
 
 .booking-form form .select-option {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .booking-form form .select-option label {
-	font-size: 14px;
-	color: #707079;
-	display: block;
-	margin-bottom: 10px;
+  font-size: 14px;
+  color: #707079;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .booking-form form .select-option .nice-select {
-	border-radius: 2px;
-	border: 1px solid #ebebeb;
-	height: 50px;
-	line-height: 50px;
-	outline: none;
-	padding-left: 20px;
-	width: 100%;
-	float: none;
+  border-radius: 2px;
+  border: 1px solid #ebebeb;
+  height: 50px;
+  line-height: 50px;
+  outline: none;
+  padding-left: 20px;
+  width: 100%;
+  float: none;
 }
 
 .booking-form form .select-option .nice-select:after {
-	border-bottom: 2px solid #dfa974;
-	border-right: 2px solid #dfa974;
-	height: 10px;
-	margin-top: 0;
-	right: 20px;
-	width: 10px;
-	top: 36%;
+  border-bottom: 2px solid #dfa974;
+  border-right: 2px solid #dfa974;
+  height: 10px;
+  margin-top: 0;
+  right: 20px;
+  width: 10px;
+  top: 36%;
 }
 
 .booking-form form .select-option .nice-select span {
-	font-size: 16px;
-	color: #19191a;
-	text-transform: uppercase;
-	font-weight: 500;
+  font-size: 16px;
+  color: #19191a;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .booking-form form .select-option .nice-select .list {
-	margin-top: 0;
-	width: 100%;
+  margin-top: 0;
+  width: 100%;
 }
 
 .booking-form form button {
-	display: block;
-	font-size: 14px;
-	text-transform: uppercase;
-	border: 1px solid #dfa974;
-	border-radius: 2px;
-	color: #dfa974;
-	font-weight: 500;
-	background: transparent;
-	width: 100%;
-	height: 46px;
-	margin-top: 30px;
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 1px solid #dfa974;
+  border-radius: 2px;
+  color: #dfa974;
+  font-weight: 500;
+  background: transparent;
+  width: 100%;
+  height: 46px;
+  margin-top: 30px;
 }
 
 .hero-slider {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
-.hero-slider.owl-carousel .owl-dots {
-	position: absolute;
-	left: 0;
-	bottom: 23px;
-	width: 100%;
-	text-align: center;
-}
-
-.hero-slider.owl-carousel .owl-dots button {
-	height: 6px;
-	width: 6px;
-	background: #ffffff;
-	opacity: 0.5;
-	border-radius: 50%;
-	margin-right: 10px;
-	-webkit-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.hero-slider.owl-carousel .owl-dots button.active {
-	width: 30px;
-	border-radius: 50px;
-	opacity: 1;
-}
-
-.hero-slider.owl-carousel .owl-dots button:last-child {
-	margin-right: 0;
-}
-
+/* CRITICAL FIXES: Ensures slider and images take full height */
 .hero-slider .owl-stage-outer,
 .hero-slider .owl-stage,
 .hero-slider .owl-item,
 .hero-slider .hs-item {
-	height: 100%;
+  height: 100%;
+}
+
+/* Added: Ensures each slide item covers full area */
+.hero-slider .hs-item {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+/* Added: Ensures the slider itself fills the entire parent section */
+.hero-slider.owl-carousel {
+  height: 100%;
+}
+
+.hero-slider.owl-carousel .owl-dots {
+  position: absolute;
+  left: 0;
+  bottom: 23px;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-slider.owl-carousel .owl-dots button {
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: 0.5;
+  border-radius: 50%;
+  margin-right: 10px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.hero-slider.owl-carousel .owl-dots button.active {
+  width: 30px;
+  border-radius: 50px;
+  opacity: 1;
+}
+
+.hero-slider.owl-carousel .owl-dots button:last-child {
+  margin-right: 0;
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-text {
+    padding-top: 80px;
+  }
+  
+  .hero-text h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+  
+  .hero-text {
+    text-align: center;
+    padding-top: 40px;
+  }
+  
+  .hero-text h1 {
+    font-size: 36px;
+    line-height: 46px;
+  }
 }
 
 /*---------------------
@@ -1225,7 +1276,7 @@ ol {
 	border: none;
 	padding-left: 20px;
 	font-size: 16px;
-	color: #707079;
+	color: #ffffff;
 }
 
 .footer-section .footer-text .ft-newslatter .fn-form button {
@@ -1258,15 +1309,11 @@ ol {
 
 .footer-section .copyright-option ul li a {
 	font-size: 16px;
-	color: #aaaab3;
+	color: #ffffff;
 }
 
-.footer-section .copyright-option .co-text {
-	font-size: 16px;
-	color: #707079;
-	text-align: right;
-}
 
+.
 
 /*---------------------
   Breadcrumb Section
