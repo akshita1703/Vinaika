@@ -1002,6 +1002,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 32px;
+
     }
 
     .room-card {
@@ -1323,16 +1324,26 @@
     }
 
     .mahua-img {
-      /* IMAGE: Mahua Bar interior — 320×280px each */
-      height: 280px;
+      height: 180px;
+      /* small images */
       border-radius: 2px;
       overflow: hidden;
     }
 
+    /* FIXED BIG IMAGE */
     .mahua-img:first-child {
-      /* IMAGE: Mahua Bar signature cocktail — 320×580px (tall) */
-      grid-row: span 2;
+      grid-column: span 2;
+      /* full width */
+      height: 320px;
+      /* bigger height */
+    }
+
+    /* ensure images fit properly */
+    .mahua-img img {
+      width: 100%;
       height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* =================== VANIRA POOL =================== */
@@ -1357,7 +1368,7 @@
     .pool-img-large {
       /* IMAGE: Vanira pool wide shot — 700×380px */
       grid-column: 1 / -1;
-      height: 320px;
+      height: 400px;
     }
 
     .pool-img-sm {
@@ -1404,7 +1415,7 @@
 
     .events-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       margin-bottom: 60px;
     }
@@ -1419,7 +1430,7 @@
 
     .event-card-img {
       /* IMAGE: Event venue photos — 380×260px each */
-      height: 220px;
+      height: 350px;
     }
 
     .event-card-body {
@@ -1687,11 +1698,52 @@
     /* =================== VIDEO SECTION =================== */
     .video-section {
       position: relative;
-      height: 520px;
-      display: flex;
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--forest) 0%, #0d3a22 100%);
+    }
+
+    .video-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 50, 32, 0.55);
+    }
+
+    .video-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
       align-items: center;
-      justify-content: center;
-      /* IMAGE: Resort cinematic background — 1920×520px */
+    }
+
+    /* TEXT */
+    .video-content {
+      color: var(--white);
+    }
+
+    .video-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 5vw, 48px);
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+
+    .video-content p {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* VIDEO */
+    .video-box video {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
+    /* =================== VIDEO SECTION =================== */
+    .video-section {
+      position: relative;
+      padding: 80px 20px;
       background: linear-gradient(135deg, var(--forest) 0%, #0d3a22 100%);
       overflow: hidden;
     }
@@ -1702,52 +1754,150 @@
       background: rgba(7, 50, 32, 0.55);
     }
 
-    .video-content {
+    /* MAIN LAYOUT */
+    .video-inner {
       position: relative;
       z-index: 2;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+
+      max-width: 1100px;
+      /* 👈 controls full section width */
+      margin: 0 auto;
+      /* center */
+    }
+
+    /* TEXT */
+    .video-content {
       color: var(--white);
     }
 
     .video-content h2 {
       font-family: var(--font-serif);
-      font-size: clamp(28px, 5vw, 48px);
-      color: var(--white);
-      margin-bottom: 10px;
+      font-size: clamp(28px, 5vw, 44px);
+      margin-bottom: 12px;
       font-weight: 300;
+      line-height: 1.2;
     }
 
     .video-content p {
       color: rgba(255, 255, 255, 0.65);
-      margin-bottom: 36px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    .play-btn {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      background: rgba(255, 255, 255, 0.1);
-      display: flex;
+    /* VIDEO BOX */
+    .video-box {
+      max-width: 980px;
+      /* 👈 prevents oversized video */
+      width: 100%;
+    }
+
+    /* VIDEO */
+    .video-box video {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      background: #000;
+    }
+
+    /* =================== MODAL =================== */
+    .video-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9999;
+
       align-items: center;
       justify-content: center;
-      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* MODAL VIDEO */
+    .video-wrapper {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      max-height: 80vh;
+      border-radius: 10px;
+    }
+
+    /* CLOSE BUTTON */
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      font-size: 26px;
       cursor: pointer;
-      transition: all 0.3s;
-      backdrop-filter: blur(4px);
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      backdrop-filter: blur(6px);
+      transition: 0.3s;
     }
 
-    .play-btn:hover {
-      background: var(--gold);
-      border-color: var(--gold);
-      transform: scale(1.08);
+    .close-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
     }
 
-    .play-btn svg {
-      width: 28px;
-      height: 28px;
-      fill: var(--white);
-      margin-left: 4px;
+    /* =================== RESPONSIVE =================== */
+    @media (max-width: 992px) {
+      .video-inner {
+        gap: 30px;
+      }
+
+      .video-box video {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .video-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .video-box {
+        max-width: 100%;
+      }
+
+      .video-box video {
+        height: 220px;
+      }
+
+      .close-btn {
+        top: 10px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .video-section {
+        padding: 60px 15px;
+      }
+
+      .video-content h2 {
+        font-size: 24px;
+      }
+
+      .video-box video {
+        height: 200px;
+      }
     }
 
     /* =================== NEWSLETTER =================== */
@@ -2136,7 +2286,7 @@
         <a href="https://youtube.com/@vinaikaecoresort-e4y" target="_blank">YT</a>
 
       </div>
-      
+
     </div>
   </div>
 
@@ -2207,7 +2357,7 @@
         <div class="carousel-item">
           <img src="img/hero/3.png" class="hero-slide-img" alt="Vinaika Resort Grounds" loading="lazy">
         </div>
-       
+
       </div>
 
       <!-- Prev / Next controls -->
@@ -2245,7 +2395,7 @@
         <div class="intro-image-stack">
           <div class="img-box intro-main-img" data-size="700×420px">
             <!-- IMAGE: Aerial view showing resort in landscape — 700×420px -->
-            <img src="img/Amenities/1 (2).png" alt="Vinaika Resort Aerial" loading="lazy">
+            <img src="img/Amenities/Vinaika A5 brochure (14.8 x 21 cm).png" alt="Vinaika Resort Aerial" loading="lazy">
           </div>
           <!-- <div class="img-box intro-accent-img" data-size="280×200px">
             <img src="img/Amenities/2.png" alt="Vinaika Nature" loading="lazy">
@@ -2719,9 +2869,9 @@
             target="_blank" class="btn-outline" style="margin-top:8px;">Make a Reservation</a>
         </div>
         <div class="mahua-images">
-          <div class="img-box mahua-img" data-size="320×580px">
+          <div class="img-box mahua-img" data-size="700×320">
             <!-- IMAGE: Mahua Bar wide interior, earthy tones — 320×580px (tall) -->
-            <img src="img/Amenities/59.png" alt="Mahua Bar" loading="lazy">
+            <img src="img/Amenities/DSC09880.JPG.jpeg" alt="Mahua Bar" loading="lazy">
           </div>
           <div class="img-box mahua-img" style="height:180px;" data-size="320×180px">
             <!-- IMAGE: Signature cocktail closeup — 320×180px -->
@@ -2746,9 +2896,9 @@
               <!-- IMAGE: Vanira pool panoramic with resort block in background — 700×320px -->
               <img src="img/Amenities/6 (4).png" alt="Vanira Pool" loading="lazy">
             </div>
-            <div class="img-box pool-img-large" data-size="600×220px">
+            <div class="img-box pool-img-large" data-size="700×320px">
               <!-- IMAGE: Poolside loungers — 320×200px -->
-              <img src="img/Amenities/6 (2).png" alt="Poolside Loungers" loading="lazy">
+              <img src="img/Amenities/48.png" alt="Poolside Loungers" loading="lazy">
             </div>
             <!-- <div class="img-box pool-img-sm" data-size="320×200px">
               <img src="img/Amenities/6 (4).png" alt="Pool Bar" loading="lazy">
@@ -2786,7 +2936,7 @@
       </div>
       <div class="events-grid">
         <div class="event-card">
-          <div class="img-box event-card-img" data-size="380×220px">
+          <div class="img-box event-card-img" data-size="380×20px">
             <!-- IMAGE: Rajdarbar Banquet Hall interior setup — 380×220px -->
             <img src="img/Amenities/3 .png" alt="Rajdarbar Banquet" loading="lazy">
           </div>
@@ -2799,23 +2949,37 @@
         <div class="event-card">
           <div class="img-box event-card-img" data-size="380×220px">
             <!-- IMAGE: Vrindavan lawn with event lighting — 380×220px -->
-            <img src="img/All_amenities/13.png" alt="Vrindavan Lawn" loading="lazy">
+            <img src="img/Amenities/Vinaika Picture july (2).png" alt="Vrindavan Lawn" loading="lazy">
           </div>
           <div class="event-card-body">
             <h4>Vrindavan · Nandanvan · Kailash Lawns</h4>
-            <p>Open-sky celebrations surrounded by nature — ideal for garden weddings, sangeet nights, and outdoor
+            <p>Open-sky celebrations surrounded by nature-ideal for garden weddings, sangeet nights, and outdoor
               receptions.</p>
           </div>
         </div>
         <div class="event-card">
           <div class="img-box event-card-img" data-size="380×220px">
             <!-- IMAGE: Gajraj Boardroom or corporate setup — 380×220px -->
-            <img src="img/Amenities/Vinaika Picture july_20260417_172415_0000.png" alt="Corporate Events" loading="lazy">
+            <img src="img/Amenities/Vinaika Picture july_20260417_172415_0000.png" alt="Corporate Events"
+              loading="lazy">
           </div>
           <div class="event-card-body">
             <h4>Corporate & MICE Events</h4>
-            <p>The Gajraj Boardroom and multi-purpose halls offer modern tech and natural calm — the ideal setting for
+            <p>The Gajraj Boardroom and multi-purpose halls offer modern tech and natural calm-the ideal setting for
               focused business events.</p>
+            <!-- <span class="event-area">500 Sq Ft Boardroom · Full AV Setup</span> -->
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="img-box event-card-img" data-size="380×220px">
+            <!-- IMAGE: Gajraj Boardroom or corporate setup — 380×220px -->
+            <img src="img/Amenities/DSC09813.JPG.jpeg" alt="Corporate Events" loading="lazy">
+          </div>
+          <div class="event-card-body">
+            <h4>Swarnim & Sangam Hall</h4>
+            <p>Swarnim and Sangam Hall offer a refined space for meetings, presentations, and corporate
+              discussions.
+            </p>
             <!-- <span class="event-area">500 Sq Ft Boardroom · Full AV Setup</span> -->
           </div>
         </div>
@@ -2853,14 +3017,12 @@
       <!-- GALLERY TABS -->
       <div class="gallery-tabs" role="tablist">
         <button class="gallery-tab active" data-tab="all">All</button>
-        <button class="gallery-tab" data-tab="property">Property & Ambience</button>
+        <button class="gallery-tab" data-tab="property">Vanira Pool</button>
         <button class="gallery-tab" data-tab="rooms">Rooms & Suites</button>
-        <button class="gallery-tab" data-tab="dining">Dining & Bar</button>
-        <button class="gallery-tab" data-tab="experiences">Experiences</button>
+        <!-- <button class="gallery-tab" data-tab="dining">Dining & Bar</button> -->
         <button class="gallery-tab" data-tab="events">Events & Celebrations</button>
-        <button class="gallery-tab" data-tab="food">Food Highlights</button>
-        <button class="gallery-tab" data-tab="guests">Guest Moments</button>
-        <button class="gallery-tab" data-tab="location">Location & Nearby</button>
+        <!-- <button class="gallery-tab" data-tab="food">Food Highlights</button> -->
+        <!-- <button class="gallery-tab" data-tab="location">Location & Nearby</button> -->
       </div>
 
       <!-- ALL -->
@@ -2869,35 +3031,39 @@
           <div class="gallery-item large">
             <!-- IMAGE: Pool aerial hero shot — 800×406px -->
             <div class="img-box" style="height:100%;" data-size="800×406px">
-              <img src="img/All_amenities/13.png" alt="Vinaika Pool" loading="lazy">
+              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Rajdarbar Banquet (2).png" alt="Vinaika Pool"
+                loading="lazy">
             </div>
-            <div class="gallery-item-caption">Vanira Pool</div>
+            <div class="gallery-item-caption">Rajdarbar Banquet</div>
           </div>
           <div class="gallery-item">
             <!-- IMAGE: Hotel block exterior — 380×200px -->
             <div class="img-box" data-size="380×200px">
-              <img src="img/All_amenities/15.png" alt="Hotel Block" loading="lazy">
+              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Vanira-pool side.png" alt="Hotel Block"
+                loading="lazy">
             </div>
-            <div class="gallery-item-caption">Hotel Block</div>
+            <div class="gallery-item-caption">Vanira Pool Side</div>
           </div>
           <div class="gallery-item">
             <!-- IMAGE: Nirvasa dining — 380×200px -->
             <div class="img-box" data-size="380×200px">
-              <img src="img/All_amenities/16.png" alt="Nirvasa Dining" loading="lazy">
+              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Gulmohar Villa (4).png" alt="Nirvasa Dining"
+                loading="lazy">
             </div>
-            <div class="gallery-item-caption">Nirvasa Restaurant</div>
+            <div class="gallery-item-caption">Gulmohar Villa</div>
           </div>
           <div class="gallery-item">
             <!-- IMAGE: Garden/ambience — 380×200px -->
             <div class="img-box" data-size="380×200px">
-              <img src="img/All_amenities/17.png" alt="Resort Garden" loading="lazy">
+              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Vrindavan, Nandanvan, and Kailash.png"
+                alt="Resort Garden" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Resort Gardens</div>
+            <div class="gallery-item-caption">Vrindavan, Nandanvan, and Kailash</div>
           </div>
           <div class="gallery-item">
             <!-- IMAGE: Mahua Bar interior — 380×200px -->
             <div class="img-box" data-size="380×200px">
-              <img src="img/Amenities/59.png" alt="Mahua Bar" loading="lazy">
+              <img src="img/Amenities//DSC09880.JPG.jpeg" alt="Mahua Bar" loading="lazy">
             </div>
             <div class="gallery-item-caption">Mahua Bar</div>
           </div>
@@ -2919,31 +3085,33 @@
             <div class="img-box" style="height:100%;" data-size="800×406px">
               <img src="img/hero/3.png" alt="Property Aerial" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Resort Aerial View</div>
+            <div class="gallery-item-caption">Vanira Pool Side</div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/hero/4.png" alt="Central Block" loading="lazy">
+              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Vanira (2).png" alt="Central Block"
+                loading="lazy">
             </div>
-            <div class="gallery-item-caption">Central Block</div>
+            <div class="gallery-item-caption">Vanira Pool Side</div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Amenities/46.png" alt="Property Ground" loading="lazy">
+              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Vanira (3).png" alt="Property Ground"
+                loading="lazy">
             </div>
-            <div class="gallery-item-caption">Resort Grounds</div>
+            <div class="gallery-item-caption">Vanira Pool Side</div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/All_amenities/15.png" alt="Hotel Block" loading="lazy">
+              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Vanira (5).png" alt="Hotel Block" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Hotel Block</div>
+            <div class="gallery-item-caption">Vanira Pool Side</div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/All_amenities/13.png" alt="Pool Area" loading="lazy">
+              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Vanira.png" alt="Pool Area" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Pool & Surroundings</div>
+            <div class="gallery-item-caption"></div>
           </div>
         </div>
       </div>
@@ -2976,12 +3144,7 @@
             </div>
             <div class="gallery-item-caption">Double Deluxe Room</div>
           </div>
-          <div class="gallery-item">
-            <div class="img-box" data-size="380×200px">
-              <img src="img/Amenities/46.png" alt="Villa" loading="lazy">
-            </div>
-            <div class="gallery-item-caption">Gulmohar Villa</div>
-          </div>
+
         </div>
       </div>
 
@@ -3184,64 +3347,96 @@
         <div class="section-divider centered"></div>
       </div>
       <div class="testi-grid">
+
         <div class="testi-card">
           <div class="testi-quote">"</div>
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">Skipping the hustle bustle of Delhi, we came home looking for peace. The property is
-            beautiful and tranquil. The food was delectable! Ranchi has a gem now.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">A</div>
-            <div>
-              <div class="testi-name">Adv. Ayushi Shreya</div>
-              <div class="testi-loc">Ranchi, Jharkhand</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-quote">"</div>
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">Very serene property. The swimming pool is well designed with a poolside bar. They have
-            a great chef who brings delightful delicacies. Highly recommended!</p>
+          <p class="testi-text">Awesome place ! Peaceful vibes amidst nature , staffs are very friendly and helpful,
+            amazing food and ambience . Definitely worth visiting, watermelon mojito and orange basil mojito are worth
+            trying , suggested and presented by Kamlesh.</p>
           <div class="testi-author">
             <div class="testi-avatar">P</div>
             <div>
-              <div class="testi-name">Prem Chand Kankaria</div>
-              <div class="testi-loc">Verified Traveller</div>
+              <div class="testi-name">Aradhya Smriti</div>
+            </div>
+          </div>
+        </div>
+          <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text"> It was good experience we went for lunch & the food was tasty,presentation was also
+            good and the restaurant staff Sunita her behaviour was so good she guides as a family member</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Swati Karen</div>
+              <!-- <div class="testi-loc">Ranchi, Jharkhand</div> -->
             </div>
           </div>
         </div>
         <div class="testi-card">
           <div class="testi-quote">"</div>
           <div class="testi-stars">★★★★½</div>
-          <p class="testi-text">The Scandinavian themed furniture and the dining-swimming area is very soothing.
-            Recommended for a weekend break and for conferences.</p>
+          <p class="testi-text">One of the finest resort , to visit with family and kids . Great place, excellent
+            ambiance friendly staffs and good food. There is specific indoor and outdoor play area for adults and kids.
+            Food service very prompt and each and every staff are welcoming.</p>
           <div class="testi-author">
             <div class="testi-avatar">A</div>
             <div>
-              <div class="testi-name">Anurag Mishra</div>
-              <div class="testi-loc">Business Executive</div>
+              <div class="testi-name">NAVNIT KUMAR</div>
+              <!-- <div class="testi-loc">Business Executive</div> -->
             </div>
           </div>
         </div>
+      
+
       </div>
     </div>
   </section>
 
   <!-- VIDEO CTA -->
+
+
   <section class="video-section">
     <div class="video-bg-overlay"></div>
-    <!-- IMAGE: Cinematic resort landscape/pool — 1920×520px -->
-    <div class="video-content">
-      <h2>Discover Our Resort &amp; Experiences</h2>
-      <p>A visual journey through Vinaika Eco-Resort</p>
-      <a href="img/At Vinaika Eco Resort, Ranchi, staying is not just about accommodation — it is about experiencin.mp4"
-        class="play-btn" id="playBtn" title="Watch our resort video">
-        <svg viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z" />
-        </svg>
-      </a>
+
+    <div class="container">
+      <div class="video-inner">
+
+        <!-- LEFT TEXT -->
+        <div class="video-content">
+          <h2>Luxury Eco Resort in Ranchi-Experiences at Vinaika</h2>
+          <p>Explore Vinaika Eco Resort, Ranchi- a luxury escape where nature meets refined living.
+            From serene stays and lush landscapes to curated experiences, discover a destination designed for
+            relaxation, celebrations, and unforgettable moments.</p>
+        </div>
+
+        <!-- RIGHT VIDEO (DIRECT) -->
+        <div class="video-box">
+          <video id="mainVideo" controls playsinline>
+            <source
+              src="img/At Vinaika Eco Resort, Ranchi, staying is not just about accommodation — it is about experiencin.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+
+      </div>
     </div>
   </section>
+
+
+  <!-- MODAL (OPTIONAL - if you still want fullscreen) -->
+  <div id="videoModal" class="video-modal">
+    <button class="close-btn" onclick="closeModal()">✕</button>
+
+    <div class="video-wrapper">
+      <video id="modalVideo" controls playsinline>
+        <source
+          src="img/At Vinaika Eco Resort, Ranchi, staying is not just about accommodation — it is about experiencin.mp4"
+          type="video/mp4">
+      </video>
+    </div>
+  </div>
 
   <!-- NEWSLETTER -->
   <section class="newsletter-section">
@@ -3276,8 +3471,8 @@
               <img src="img/Vinaika PNG LOGO (1).png" alt="Vinaika Eco-Resort"
                 style="height:52px;width:auto;object-fit:contain;">
             </div>
-            <p>Eastern India's largest eco-sanctuary, where refined luxury intertwines seamlessly with nature's
-              splendour. Inspired by Hindu mythology, symbolizing auspicious beginnings.</p>
+            <p>Experience a serene retreat at Vinaika Eco Resort, where nature's peace entwines with luxurious
+              amenities, featuring a relaxing spa, pristine pool, and grand banquet halls for every celebration.</p>
             <div class="footer-social">
               <a href="https://www.facebook.com/profile.php?id=61569073734557" class="social-link" target="_blank"
                 title="Facebook">f</a>
@@ -3346,7 +3541,9 @@
     <button onclick="closeModal()"
       style="position:absolute;top:24px;right:32px;background:none;border:none;color:white;font-size:36px;cursor:pointer;">✕</button>
     <video id="modalVideo" controls style="max-width:90%;max-height:80vh;border-radius:4px;">
-      <source src="img/WhatsApp Video 2025-04-02 at 1.56.41 PM.mp4" type="video/mp4">
+      <source
+        src="img/At Vinaika Eco Resort, Ranchi, staying is not just about accommodation — it is about experiencin.mp4"
+        type="video/mp4">
     </video>
   </div>
 
@@ -3389,19 +3586,27 @@
     });
 
     // =================== VIDEO MODAL ===================
-    document.getElementById('playBtn').addEventListener('click', (e) => {
-      e.preventDefault();
-      const modal = document.getElementById('videoModal');
+
+    const mainVideo = document.getElementById('mainVideo');
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+
+    // OPTIONAL: click video to open fullscreen modal
+    mainVideo.addEventListener('click', () => {
       modal.style.display = 'flex';
-      document.getElementById('modalVideo').play();
+      modalVideo.currentTime = mainVideo.currentTime;
+      modalVideo.play();
+      document.body.style.overflow = 'hidden';
     });
+
     function closeModal() {
-      document.getElementById('videoModal').style.display = 'none';
-      const v = document.getElementById('modalVideo');
-      v.pause(); v.currentTime = 0;
+      modal.style.display = 'none';
+      modalVideo.pause();
+      document.body.style.overflow = 'auto';
     }
-    document.getElementById('videoModal').addEventListener('click', (e) => {
-      if (e.target === document.getElementById('videoModal')) closeModal();
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
     });
 
     // =================== GALLERY LIGHTBOX ===================
