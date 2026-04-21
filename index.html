@@ -557,7 +557,7 @@
       object-fit: cover;
       opacity: 1;
     }
-    
+
 
     /* Keep carousel indicators above overlay but below content */
     .hero-carousel .carousel-indicators {
@@ -590,33 +590,33 @@
       filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
     }
 
-/* ================= MOBILE NO EXTRA SPACE FIX ================= */
-@media (max-width: 768px) {
+    /* ================= MOBILE NO EXTRA SPACE FIX ================= */
+    @media (max-width: 768px) {
 
-  .hero {
-    height: auto !important;
-    min-height: auto !important;
-  }
+      .hero {
+        height: auto !important;
+        min-height: auto !important;
+      }
 
-  .hero-carousel,
-  .hero-carousel-inner,
-  .hero-carousel .carousel-item {
-    position: relative;
-    height: auto !important;
-  }
+      .hero-carousel,
+      .hero-carousel-inner,
+      .hero-carousel .carousel-item {
+        position: relative;
+        height: auto !important;
+      }
 
-  /* Remove Bootstrap default min-height behavior */
-  .carousel-item {
-    min-height: unset !important;
-  }
+      /* Remove Bootstrap default min-height behavior */
+      .carousel-item {
+        min-height: unset !important;
+      }
 
-  .hero-slide-img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-  }
-}
+      .hero-slide-img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+    }
 
     /* =================== GALLERY MODAL (Lightbox) =================== */
     #galleryModal {
@@ -2499,11 +2499,10 @@
         <div class="amenity-card">
           <div class="amenity-icon"> <i class="flaticon-032-armchair"></i>
           </div>
-          <h4>Kids Play Area & Play Room</h4>
-          <p>Let your kids enjoy the perfect blend of indoor fun and outdoor adventure in our vibrant kids
-            play room and open-air play area. Featuring colorful zones like Bazighar and Natkhat, this
-            safe, kid-friendly space encourages creativity, imagination, and active play—keeping
-            children engaged while you relax and enjoy a worry-free stay.</p>
+          <h4>Kids Play Area & Outdoor Activities</h4>
+          <p>Let your kids enjoy a vibrant indoor play room and open-air zones like Bazighar and Natkhat, designed for
+            creativity and fun. With safe spaces for active play, they stay engaged while you relax. The experience
+            extends outdoors with cycling, ATV rides, and sports like cricket, badminton, and football.</p>
         </div>
         <div class="amenity-card">
           <div class="amenity-icon"> <i class="flaticon-006-dumbbell"></i></div>
@@ -2797,11 +2796,11 @@
         <div class="villa-images">
           <div class="img-box villa-img-top" data-size="700×380px">
             <!-- IMAGE: Gulmohar Villa exterior — 700×280px -->
-            <img src="img/Amenities/1.png" alt="Gulmohar Villa Exterior" loading="lazy">
+            <img src="img/Amenities/villa.png" alt="Gulmohar Villa Exterior" loading="lazy">
           </div>
           <div class="img-box villa-img-bottom" data-size="700×260px">
             <!-- IMAGE: Villa garden or interior — 700×260px -->
-            <img src="img/Amenities/4.png" alt="Villa Garden" loading="lazy">
+            <img src="img/Amenities/1.png" alt="Villa Garden" loading="lazy">
           </div>
         </div>
         <div class="villa-content">
@@ -2835,6 +2834,9 @@
       <div class="dining-grid">
         <div class="dining-images">
           <div class="img-box dining-img-main" data-size="520×300px">
+            <img src="img/Amenities/16.png" alt="Nirvasa Restaurant" loading="lazy">
+          </div>
+           <div class="img-box dining-img-main" data-size="520×300px">
             <img src="img/Amenities/5.png" alt="Nirvasa Restaurant" loading="lazy">
           </div>
           <!-- <div class="img-box dining-img-sm" data-size="240×180px">
@@ -3038,7 +3040,9 @@
         <button class="gallery-tab" data-tab="rooms">Rooms & Suites</button>
         <!-- <button class="gallery-tab" data-tab="dining">Dining & Bar</button> -->
         <button class="gallery-tab" data-tab="events">Events & Celebrations</button>
-        <!-- <button class="gallery-tab" data-tab="food">Food Highlights</button> -->
+        <button class="gallery-tab" data-tab="food">Food Highlights</button>
+        <button class="gallery-tab" data-tab="guests">Guest Moments</button>
+
         <!-- <button class="gallery-tab" data-tab="location">Location & Nearby</button> -->
       </div>
 
@@ -3202,41 +3206,7 @@
         </div>
       </div>
 
-      <!-- EXPERIENCES -->
-      <div class="gallery-panel" id="tab-experiences">
-        <div class="gallery-grid">
-          <div class="gallery-item large">
-            <div class="img-box" style="height:100%;" data-size="800×406px">
-              <img src="img/All_amenities/13.png" alt="Pool Experience" loading="lazy">
-            </div>
-            <div class="gallery-item-caption">Vanira Pool Experience</div>
-          </div>
-          <div class="gallery-item">
-            <div class="img-box" data-size="380×200px">
-              <img src="img/Amenities/47.png" alt="Poolside" loading="lazy">
-            </div>
-            <div class="gallery-item-caption">Pool Retreat</div>
-          </div>
-          <div class="gallery-item">
-            <div class="img-box" data-size="380×200px">
-              <img src="img/Amenities/48.png" alt="Lounging" loading="lazy">
-            </div>
-            <div class="gallery-item-caption">Sun Lounging</div>
-          </div>
-          <div class="gallery-item">
-            <div class="img-box" data-size="380×200px">
-              <img src="img/All_amenities/17.png" alt="Gardens" loading="lazy">
-            </div>
-            <div class="gallery-item-caption">Garden Walks</div>
-          </div>
-          <div class="gallery-item">
-            <div class="img-box" data-size="380×200px">
-              <img src="img/hero/1.png" alt="Sunset View" loading="lazy">
-            </div>
-            <div class="gallery-item-caption">Sunset Views</div>
-          </div>
-        </div>
-      </div>
+    
 
       <!-- EVENTS -->
       <div class="gallery-panel" id="tab-events">
@@ -3244,18 +3214,20 @@
           <div class="gallery-item large">
             <div class="img-box" style="height:100%;" data-size="800×406px">
               <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Rajdarbar Banquet.png" alt="Vinaika Pool">
-           </div>
+            </div>
             <div class="gallery-item-caption">Rajdarbar Banquet</div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Rajdarbar Banquet (4).png" alt="Lawn Event" loading="lazy">
+              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Rajdarbar Banquet (4).png" alt="Lawn Event"
+                loading="lazy">
             </div>
             <div class="gallery-item-caption">Rajdarbar Events</div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Rajdarbar Banquet (3).png" alt="Banquet" loading="lazy">
+              <img src="img/Vinaika Pictures/Vinaika Eco-Resort Images/Rajdarbar Banquet (3).png" alt="Banquet"
+                loading="lazy">
             </div>
             <div class="gallery-item-caption">Banquet Hall</div>
           </div>
@@ -3273,27 +3245,35 @@
         <div class="gallery-grid">
           <div class="gallery-item large">
             <div class="img-box" style="height:100%;" data-size="800×406px">
-              <img src="img/Nirvasa/6.png" alt="Nirvasa Food" loading="lazy">
+              <img src="img/Gallery/Food Highlights/0001 (5).jpg" alt="Nirvasa Food" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Culinary Excellence at Nirvasa</div>
+            <!-- <div class="gallery-item-caption">Culinary Excellence at Nirvasa</div> -->
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Amenities/53.png" alt="Food" loading="lazy">
+              <img src="img/Gallery/Food Highlights/0001 (6).jpg" alt="Food" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Regional Flavours</div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Amenities/60.png" alt="Cocktails" loading="lazy">
+              <img src="img/Gallery/Food Highlights/0001 (7).jpg" alt="Cocktails" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Mahua Cocktails</div>
           </div>
-          <div class="gallery-item">
+         
+           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/All_amenities/16.png" alt="Table Setting" loading="lazy">
+              <img src="img/Gallery/Food Highlights/0003 (4).jpg" alt="Table Setting" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Table Settings</div>
+          </div>
+           <div class="gallery-item">
+            <div class="img-box" data-size="380×200px">
+              <img src="img/Gallery/Food Highlights/0003.jpg" alt="Table Setting" loading="lazy">
+            </div>
+          </div>
+           <div class="gallery-item">
+            <div class="img-box" data-size="380×200px">
+              <img src="img/Gallery/Food Highlights/71 (2).png" alt="Table Setting" loading="lazy">
+            </div>
           </div>
         </div>
       </div>
@@ -3303,27 +3283,23 @@
         <div class="gallery-grid">
           <div class="gallery-item large">
             <div class="img-box" style="height:100%;" data-size="800×406px">
-              <img src="img/hero/1.png" alt="Guest Experience" loading="lazy">
+              <img src="img/Gallery/Experiences/23.png" alt="Guest Experience" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Moments Worth Remembering</div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Amenities/48.png" alt="Pool Moments" loading="lazy">
+              <img src="img/Gallery/Experiences/0002.jpg" alt="Pool Moments" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Pool Moments</div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/All_amenities/17.png" alt="Garden Moments" loading="lazy">
+              <img src="img/Gallery/Experiences/20.png" alt="Garden Moments" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Garden Strolls</div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Amenities/59.png" alt="Bar Moments" loading="lazy">
+              <img src="img/Gallery/Experiences/21.png" alt="Bar Moments" loading="lazy">
             </div>
-            <div class="gallery-item-caption">Evening at Mahua</div>
           </div>
         </div>
       </div>
@@ -3378,7 +3354,7 @@
             </div>
           </div>
         </div>
-          <div class="testi-card">
+        <div class="testi-card">
           <div class="testi-quote">"</div>
           <div class="testi-stars">★★★★★</div>
           <p class="testi-text"> It was good experience we went for lunch & the food was tasty,presentation was also
@@ -3405,7 +3381,7 @@
             </div>
           </div>
         </div>
-      
+
 
       </div>
     </div>
