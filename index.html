@@ -177,7 +177,7 @@
 
     /* Image placeholder helper */
     .img-box {
-      background: linear-gradient(135deg, var(--cream-dark) 0%, #d4c9b0 100%);
+      /* background: linear-gradient(135deg, var(--cream-dark) 0%, #d4c9b0 100%); */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -590,16 +590,61 @@
     }
 
     /* Mobile hero height */
-    @media (max-width: 768px) {
-      .hero {
-        min-height: 100svh;
-        height: 100svh;
-      }
+   /* =================== MOBILE FIX ONLY =================== */
+@media (max-width: 768px) {
 
-      .hero-carousel .carousel-indicators {
-        bottom: 80px;
-      }
-    }
+  .hero {
+    height: 85vh; /* reduce height slightly for mobile */
+    min-height: 500px;
+  }
+
+  .hero-carousel,
+  .hero-carousel-inner,
+  .hero-carousel .carousel-item {
+    height: 100%;
+  }
+
+  .hero-slide-img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Adjust indicators */
+  .hero-carousel .carousel-indicators {
+    bottom: 20px;
+  }
+
+  .hero-carousel .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Smaller arrows */
+  .hero-carousel .carousel-control-prev,
+  .hero-carousel .carousel-control-next {
+    width: 35px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+
+  .hero {
+    height: 75vh;
+    min-height: 420px;
+  }
+
+  /* Hide arrows for better UX */
+  .hero-carousel .carousel-control-prev,
+  .hero-carousel .carousel-control-next {
+    display: none;
+  }
+
+  .hero-carousel .carousel-indicators {
+    bottom: 12px;
+  }
+}
 
     /* =================== GALLERY MODAL (Lightbox) =================== */
     #galleryModal {
@@ -2343,7 +2388,7 @@
           aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <!-- <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button> -->
       </div>
 
       <!-- Slides — add/change image src paths here -->
