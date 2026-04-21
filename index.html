@@ -557,6 +557,7 @@
       object-fit: cover;
       opacity: 1;
     }
+    
 
     /* Keep carousel indicators above overlay but below content */
     .hero-carousel .carousel-indicators {
@@ -589,60 +590,31 @@
       filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
     }
 
-    /* Mobile hero height */
-   /* =================== MOBILE FIX ONLY =================== */
+/* ================= MOBILE NO EXTRA SPACE FIX ================= */
 @media (max-width: 768px) {
 
   .hero {
-    height: 85vh; /* reduce height slightly for mobile */
-    min-height: 500px;
+    height: auto !important;
+    min-height: auto !important;
   }
 
   .hero-carousel,
   .hero-carousel-inner,
   .hero-carousel .carousel-item {
-    height: 100%;
+    position: relative;
+    height: auto !important;
+  }
+
+  /* Remove Bootstrap default min-height behavior */
+  .carousel-item {
+    min-height: unset !important;
   }
 
   .hero-slide-img {
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  /* Adjust indicators */
-  .hero-carousel .carousel-indicators {
-    bottom: 20px;
-  }
-
-  .hero-carousel .carousel-indicators button {
-    width: 8px;
-    height: 8px;
-  }
-
-  /* Smaller arrows */
-  .hero-carousel .carousel-control-prev,
-  .hero-carousel .carousel-control-next {
-    width: 35px;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 480px) {
-
-  .hero {
-    height: 75vh;
-    min-height: 420px;
-  }
-
-  /* Hide arrows for better UX */
-  .hero-carousel .carousel-control-prev,
-  .hero-carousel .carousel-control-next {
-    display: none;
-  }
-
-  .hero-carousel .carousel-indicators {
-    bottom: 12px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
   }
 }
 
