@@ -13,6 +13,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     /* Tan Pearl font — place tan-pearl.woff2 / .woff / .ttf in your css/fonts/ folder */
     @font-face {
@@ -2283,6 +2285,149 @@
         width: 100%;
       }
     }
+
+
+    
+/* =================== EXPLORATIONS AROUND =================== */
+.explorations-section {
+  padding: 60px 0;
+  background: var(--cream);
+}
+
+.explorations-header {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.explorations-arch-wrap {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.explorations-tribal-top,
+.explorations-tribal-bottom {
+  height: 6px;
+ 
+  opacity: 0.5;
+}
+
+.explorations-arch {
+  background: var(--forest);
+  /* Arch shape: flat bottom, arch top */
+  border-radius: 30px 30px 0 0;
+  padding: 64px 56px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle texture overlay */
+.explorations-arch::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(181,128,58,0.10) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.explorations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.exploration-col {
+  padding: 0 8px;
+}
+
+.exploration-divider {
+  background: rgba(255,255,255,0.12);
+  width: 1px;
+  align-self: stretch;
+}
+
+.exploration-category {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.exploration-cat-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.exploration-category h4 {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin: 0;
+}
+
+.exploration-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 30px;
+}
+
+.exploration-list li {
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.82);
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding-left: 16px;
+  line-height: 1.5;
+}
+
+.exploration-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--gold-light);
+  font-size: 12px;
+  top: 7px;
+}
+
+.exploration-list li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .explorations-arch {
+    border-radius: 200px 200px 0 0;
+    padding: 48px 28px 44px;
+  }
+
+  .explorations-grid {
+    grid-template-columns: 1fr;
+    gap: 32px 0;
+  }
+
+  .exploration-divider {
+    display: none;
+  }
+
+  .exploration-col {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .explorations-arch {
+    border-radius: 120px 120px 0 0;
+    padding: 40px 20px 36px;
+  }
+}
   </style>
 </head>
 
@@ -2297,10 +2442,16 @@
             data-cfemail="3a485f495f484c5b4e535554497a4c53545b53515b5f5955485f4955484e14595557">reservations@vinaikaecoresort.com</a></span>
       </div>
       <div>
-        <a href="https://www.facebook.com/profile.php?id=61569073734557" target="_blank">FB</a>
-        <a href="https://x.com/VinaikaEco" target="_blank">TW</a>
-        <a href="https://www.instagram.com/vinaikaecoresort" target="_blank">IG</a>
-        <a href="https://youtube.com/@vinaikaecoresort-e4y" target="_blank">YT</a>
+        <a href="https://www.facebook.com/profile.php?id=61569073734557" target="_blank" title="Facebook"
+          style="margin-left:16px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/VinaikaEco" target="_blank" title="X / Twitter" style="margin-left:16px;"><i
+            class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/vinaikaecoresort" target="_blank" title="Instagram"
+          style="margin-left:16px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@vinaikaecoresort-e4y" target="_blank" title="YouTube" style="margin-left:16px;"><i
+            class="fab fa-youtube"></i></a>
+
+
 
       </div>
 
@@ -2312,7 +2463,11 @@
     <div class="header-inner">
       <div class="logo-area">
         <!-- LOGO: Replace src with your logo image path -->
-        <img src="img/Vinaika PNG LOGO (1).png" alt="Vinaika Eco-Resort" class="header-logo" height="56">
+        <a href="index.html">
+          <img src="img/Vinaika PNG LOGO (1).png" alt="Vinaika Eco-Resort" class="header-logo" height="56">
+        </a>
+
+
       </div>
       <nav>
         <ul>
@@ -2836,7 +2991,7 @@
           <div class="img-box dining-img-main" data-size="520×300px">
             <img src="img/Amenities/16.png" alt="Nirvasa Restaurant" loading="lazy">
           </div>
-           <div class="img-box dining-img-main" data-size="520×300px">
+          <div class="img-box dining-img-main" data-size="520×300px">
             <img src="img/Amenities/5.png" alt="Nirvasa Restaurant" loading="lazy">
           </div>
           <!-- <div class="img-box dining-img-sm" data-size="240×180px">
@@ -3110,14 +3265,12 @@
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Gallery/Property & Ambience/66.png" alt="Central Block"
-                loading="lazy">
+              <img src="img/Gallery/Property & Ambience/66.png" alt="Central Block" loading="lazy">
             </div>
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Gallery/Property & Ambience/5.png" alt="Property Ground"
-                loading="lazy">
+              <img src="img/Gallery/Property & Ambience/5.png" alt="Property Ground" loading="lazy">
             </div>
             <!-- <div class="gallery-item-caption">Vanira Pool Side</div> -->
           </div>
@@ -3164,12 +3317,12 @@
             <div class="gallery-item-caption">Double Deluxe Room</div>
           </div>
 
-            <div class="gallery-item">
+          <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
               <img src="img/Gallery/Room/53 (3).png" alt="Deluxe Room" loading="lazy">
             </div>
           </div>
-            <div class="gallery-item">
+          <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
               <img src="img/Gallery/Room/78.png" alt="Deluxe Room" loading="lazy">
             </div>
@@ -3208,7 +3361,7 @@
               <img src="img/Gallery/Dining & Bar/61 (2).png" alt="Pool Bar" loading="lazy">
             </div>
           </div>
-           <div class="gallery-item">
+          <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
               <img src="img/Gallery/Dining & Bar/64.png" alt="Pool Bar" loading="lazy">
             </div>
@@ -3216,7 +3369,7 @@
         </div>
       </div>
 
-    
+
 
       <!-- EVENTS -->
       <div class="gallery-panel" id="tab-events">
@@ -3229,15 +3382,13 @@
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Gallery/Events & Celebrations/0001.jpg" alt="Lawn Event"
-                loading="lazy">
+              <img src="img/Gallery/Events & Celebrations/0001.jpg" alt="Lawn Event" loading="lazy">
             </div>
             <!-- <div class="gallery-item-caption">Rajdarbar Events</div> -->
           </div>
           <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
-              <img src="img/Gallery/Events & Celebrations/79 (2).png" alt="Banquet"
-                loading="lazy">
+              <img src="img/Gallery/Events & Celebrations/79 (2).png" alt="Banquet" loading="lazy">
             </div>
           </div>
           <div class="gallery-item">
@@ -3245,12 +3396,12 @@
               <img src="img/Gallery/Events & Celebrations/DSC09813.JPG.jpeg" alt="Outdoor Wedding" loading="lazy">
             </div>
           </div>
-            <div class="gallery-item">
+          <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
               <img src="img/Gallery/Events & Celebrations/78 (2).png" alt="Outdoor Wedding" loading="lazy">
             </div>
           </div>
-            <div class="gallery-item">
+          <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
               <img src="img/Gallery/Events & Celebrations/80 (2).png" alt="Outdoor Wedding" loading="lazy">
             </div>
@@ -3277,18 +3428,18 @@
               <img src="img/Gallery/Food Highlights/0001 (7).jpg" alt="Cocktails" loading="lazy">
             </div>
           </div>
-         
-           <div class="gallery-item">
+
+          <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
               <img src="img/Gallery/Food Highlights/0003 (4).jpg" alt="Table Setting" loading="lazy">
             </div>
           </div>
-           <div class="gallery-item">
+          <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
               <img src="img/Gallery/Food Highlights/0003.jpg" alt="Table Setting" loading="lazy">
             </div>
           </div>
-           <div class="gallery-item">
+          <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
               <img src="img/Gallery/Food Highlights/71 (2).png" alt="Table Setting" loading="lazy">
             </div>
@@ -3304,15 +3455,15 @@
               <img src="img/Gallery/Experiences/23.png" alt="Guest Experience" loading="lazy">
             </div>
           </div>
-          
 
-           <div class="gallery-item">
+
+          <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
               <img src="img/Gallery/Experiences/31.png" alt="Bar Moments" loading="lazy">
             </div>
           </div>
 
-           <div class="gallery-item">
+          <div class="gallery-item">
             <div class="img-box" data-size="380×200px">
               <img src="img/Gallery/Experiences/27.png" alt="Bar Moments" loading="lazy">
             </div>
@@ -3346,6 +3497,92 @@
 
     </div>
   </section>
+
+
+
+  <!--Exploration Around-->
+  <section class="explorations-section">
+  <div class="container">
+    <div class="explorations-header">
+      <span class="section-label">Discover the Region</span>
+      <h2 class="section-heading">Explorations <em>Around</em></h2>
+      <div class="section-divider centered"></div>
+      <p style="max-width:560px;margin:0 auto 48px;text-align:center;">
+        Vinaika Eco-Resort is your perfect base to explore the natural wonders, sacred temples, and
+        hidden gems of Jharkhand — all within easy reach.
+      </p>
+    </div>
+
+    <div class="explorations-arch-wrap">
+      <!-- Decorative tribal top stripe -->
+      <div class="explorations-tribal-top"></div>
+
+      <div class="explorations-arch">
+        <div class="explorations-grid">
+
+          <!-- Column 1: Nature & Waterfalls -->
+          <div class="exploration-col">
+            <div class="exploration-category">
+              <div class="exploration-cat-icon">🌿</div>
+              <h4>Nature &amp; Scenic Spots</h4>
+            </div>
+            <ul class="exploration-list">
+              <li>Tagore Hill</li>
+              <li>Birsa Zoological Park</li>
+              <li>Patratu Valley &amp; Lake</li>
+              <li>Nakshatra Van</li>
+              <li>Kanke Dam</li>
+            </ul>
+
+            <div class="exploration-category" style="margin-top:36px;">
+              <div class="exploration-cat-icon">💧</div>
+              <h4>Waterfalls &amp; Hidden Gems</h4>
+            </div>
+            <ul class="exploration-list">
+              <li>Dasham Falls</li>
+              <li>Jonha Falls</li>
+              <li>Sita Falls</li>
+              <li>Hundru Falls</li>
+            </ul>
+          </div>
+
+          <!-- Divider -->
+          <div class="exploration-divider"></div>
+
+          <!-- Column 2: Spiritual & Cultural -->
+          <div class="exploration-col">
+            <div class="exploration-category">
+              <div class="exploration-cat-icon">🛕</div>
+              <h4>Spiritual &amp; Cultural Highlights</h4>
+            </div>
+            <ul class="exploration-list">
+              <li>Jagannath Temple</li>
+              <li>Pahari Mandir</li>
+              <li>Surya Temple</li>
+              <li>Rajrappa Mandir</li>
+              <li>Deori Mandir</li>
+            </ul>
+
+            <!-- <div class="exploration-category" style="margin-top:36px;">
+              <div class="exploration-cat-icon">🏛️</div>
+              <h4>Heritage &amp; History</h4>
+            </div>
+            <ul class="exploration-list">
+              <li>Ranchi Museum</li>
+              <li>Rock Garden</li>
+              <li>Tribal Research Institute</li>
+              <li>Jharkhand War Memorial</li>
+            </ul> -->
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Decorative tribal bottom stripe -->
+      <div class="explorations-tribal-bottom"></div>
+    </div>
+  </div>
+</section>
 
   <!-- TESTIMONIALS -->
   <section class="testimonials-section">
